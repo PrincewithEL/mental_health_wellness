@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "mental_wellness_Proj/asgi.py",
+      "src": "mental_wellness_Proj/wsgi.py",
       "use": "@vercel/python"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "mental_wellness_Proj/asgi.py"
+      "dest": "mental_wellness_Proj/wsgi.py"
     }
   ]
 }
