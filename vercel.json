@@ -1,23 +1,28 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "mental_wellness_Proj/asgi.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "staticfiles/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "mental_wellness_Proj/asgi.py"
-    }
-  ]
+"version": 2,
+"builds": [
+{
+
+"src": "mental_wellness_Proj/wsgi.py",
+"use": "@vercel/python",
+"config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+},
+{
+"src": "build_files.sh",
+"use": "@vercel/static-build",
+"config": {
+"distDir": "staticfiles_build"
+}
+}
+],
+"routes": [
+{
+"src": "/static/( .* )",
+"dest": "/static/$1"
+},
+{
+"src": "/( .* )",
+"dest": "mental_wellness_Proj/wsgi.py"
+}
+]
 }
