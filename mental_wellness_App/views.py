@@ -5,6 +5,9 @@ from .ai_module.emotion_analysis import load_response_data, find_response, analy
 from sklearn.feature_extraction.text import TfidfVectorizer
 import logging
 
+def home(request):
+    return render(request, 'index.html')
+
 class EmotionResponseView(View):
     response_data = load_response_data()
     vectorizer = TfidfVectorizer(max_features=1000)

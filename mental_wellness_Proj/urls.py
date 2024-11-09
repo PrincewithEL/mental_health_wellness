@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mental_wellness_App.views import EmotionResponseView
+from mental_wellness_App.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
     path('respond/', EmotionResponseView.as_view(), name='emotion_response'),
 ]
