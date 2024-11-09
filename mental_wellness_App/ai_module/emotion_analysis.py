@@ -113,5 +113,5 @@ def process_user_input(user_message: str, responses: pd.DataFrame, vectorizer: T
         return "I apologize, but I'm having trouble processing your message. Could you try expressing that in a different way?"
 
 # Load data and vectorize statements on initialization
-data = load_response_data()
-vectorizer, context_vectors = vectorize_contexts(data)
+# data = load_response_data()
+# vectorizer, context_vectors = vectorize_contexts(data)
